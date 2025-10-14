@@ -133,3 +133,5 @@ sudo nginx -t && sudo systemctl restart nginx
 - Uptime Kuma monitor (JSON query) to check syncing via /rpc.
 - Consider Prometheus/Grafana (scrape Juno metrics) for dashboards.
 - Deliverables checklist: addresses, transaction hash, public RPC, uptime screenshots, Grafana screenshot, attestation logs were in grafana-alloy-setup folder
+## 9 challenge faced
+- Written it in seperate file check challenges.md file gitHub repo
