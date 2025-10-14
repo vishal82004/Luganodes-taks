@@ -1,8 +1,8 @@
-# StarkNet Validator Setup Guide
+# StarkNet Validator Setup
 
 
 ## 1. Environment Preparation
-- VPS: Ubuntu 22.04, >=4GB RAM, 2 CPU, 100GB SSD.
+- EC2: Ubuntu 22.04, >=4GB RAM, 2 CPU, 100GB SSD.
 - Install Docker:
 ```bash
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
@@ -129,9 +129,7 @@ sudo nginx -t && sudo systemctl restart nginx
 
 ---
 
-## 8. Monitoring & Deliverables (brief)
+## 8. Deliverables (brief)
 - Uptime Kuma monitor (JSON query) to check syncing via /rpc.
 - Consider Prometheus/Grafana (scrape Juno metrics) for dashboards.
-- Deliverables checklist: addresses, transaction hash, public RPC, uptime screenshots, Grafana screenshot, attestation logs, brief notes on issues encountered.
-
-
+- Deliverables checklist: addresses, transaction hash, public RPC, uptime screenshots, Grafana screenshot, attestation logs were in grafana-alloy-setup folder
