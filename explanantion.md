@@ -1,8 +1,5 @@
-# StarkNet Validator Setup Guide (concise)
+# StarkNet Validator Setup Guide
 
-This guide walks you through deploying a StarkNet Sepolia testnet validator: server prep, account setup, Juno node, staking, attestation service, and a public RPC proxy.
-
----
 
 ## 1. Environment Preparation
 - VPS: Ubuntu 22.04, >=4GB RAM, 2 CPU, 100GB SSD.
@@ -116,7 +113,7 @@ server {
     server_name 65.0.3.77;
 
     location /rpc {
-        proxy_pass http://127.0.0.1:6060;
+        proxy_pass http://127.0.0.1:26657;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -133,7 +130,7 @@ sudo nginx -t && sudo systemctl restart nginx
 ---
 
 ## 8. Monitoring & Deliverables (brief)
-- Optional: Uptime Kuma monitor (JSON query) to check syncing via /rpc.
+- Uptime Kuma monitor (JSON query) to check syncing via /rpc.
 - Consider Prometheus/Grafana (scrape Juno metrics) for dashboards.
 - Deliverables checklist: addresses, transaction hash, public RPC, uptime screenshots, Grafana screenshot, attestation logs, brief notes on issues encountered.
 
