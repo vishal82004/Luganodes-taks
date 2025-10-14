@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  mimir:
+    image: grafana/mimir:2.10.0
+    container_name: mimir
+    ports:
+      - "9009:9009"
+    volumes:
+      - mimir-data:/mimir
+      - ./mimir.yaml:/etc/mimir/mimir.yaml
+    command: ["-config.file=/etc/mimir/mimir.yaml"]
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+
+  alloy:
+    image: grafana/alloy:latest
+    container_name: alloy
+    volumes:
+      - ./alloy.yaml:/etc/alloy/config.alloy
+    command: ["--config.file=/etc/alloy/config.alloy"]
+    network_mode: "host"
+
+volumes:
+  mimir-data:
+  grafana-data:

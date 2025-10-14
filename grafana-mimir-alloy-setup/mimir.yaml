@@ -1,0 +1,27 @@
+server:
+  http_listen_port: 9009
+
+distributor:
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: inmemory
+
+ingester:
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: inmemory
+    replication_factor: 1
+
+blocks_storage:
+  backend: filesystem
+  filesystem:
+    dir: /tmp/mimir/blocks
+
+compactor:
+  data_dir: /tmp/mimir/compactor
+
+store_gateway:
+  sharding_ring:
+    replication_factor: 1

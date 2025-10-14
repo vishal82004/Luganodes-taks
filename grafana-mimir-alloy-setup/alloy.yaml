@@ -1,0 +1,15 @@
+target: all
+auth_enabled: false
+server:
+  http_listen_port: 9009
+distributor:
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: inmemory
+ingester:
+  ring:
+    instance_addr: 127.0.0.1
+    kvstore:
+      store: inmemory
+    replication_factor: 1
